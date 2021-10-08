@@ -1,0 +1,21 @@
+<div style="padding: 10px;">
+    <div class="custom-title">
+        {{project_name}}
+    </div>
+    <div class="one-line-bar">List of Files Selected</div>
+    <div style="padding-left: 40px;">
+        <h5>
+            <ul>
+                {% for item in project_file_list %}
+                    <div style="padding: 5px 10px 5px 20px;">
+                        <li class="d-flex align-items-center custom-item-li" data-file="{{item}}" data-project="{{project_name}}">
+                            <input type="checkbox" class="checkbox-file" data-id="{{item}}"/>
+                            &nbsp;&nbsp;&nbsp;
+                            <i class="fa fa-file-o flex">&nbsp;{{item}}</i>
+                        </li>
+                    </div>
+                {% endfor %}
+            </ul>
+        </h5>
+    </div>
+</div>

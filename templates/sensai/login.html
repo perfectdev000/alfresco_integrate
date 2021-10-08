@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block header %}
+
+
+<div class="generic-body-login">
+
+	<div class="modal" id="login">
+
+		<div class="modal-dialog generic-modal">
+
+			<div class="modal-content">
+				{% include 'partials/alerts.html' %}
+				<div class="modal-body">
+					<form method="POST">
+						{% csrf_token %}
+						<div class="form-group">
+							{{ form|crispy }}
+<!--							<input type="email" name='email' class="form-control"  aria-describedby="emailHelp" placeholder="Email Address">-->
+						</div>
+<!--						<div class="form-group">-->
+<!--							<input type="password" name="password" class="form-control" placeholder="Password">-->
+<!--							<img src="{% static 'images/eye-icon.svg'%}" alt="icon" height="" width="24" class="eye-icon">-->
+<!--						</div>-->
+						<div class="form-check">
+							<div class="form-group">
+								<input type="checkbox" id="check1">
+								<label for="check1">keep me logged in</label>
+								<a href="{% url 'reset_password' %}"  class="forgot-psw">Forgot Password ?</a>
+							</div>
+						</div>
+						<div class="btn-decoration"> <span>Login</span> </div>
+						<button type="submit" class="btn btn-primary generic-btn">Login</button>
+						<div class="sign-up-details">
+							<a href="{% url 'sign_up' %}" class="nav-link signup-btn"> Sign Up</a> <span>  if you don't have an account.</span>
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

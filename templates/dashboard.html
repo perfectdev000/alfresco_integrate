@@ -1,0 +1,83 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% load file_full_path %}
+{% block content %}
+
+
+    <div id="wrapper">
+        <div class="admin-panel">
+            {% include 'layouts/navbar.html'%}
+            {% include 'partials/alerts.html' %}
+            <div class="admin-dashboard container" id="main">
+                <div class="row row-offcanvas row-offcanvas-left">
+                    {% include 'layouts/sidebar.html'%}
+                    {% include 'layouts/data.html' %}
+                    <div class="admin-right-banner">
+                        <div class="files">
+                            <iframe class="iframe-preview" src=""></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let element = document.querySelectorAll(".custom-control-label1");
+        let getUrls = document.querySelectorAll(".getUrl");
+        let stars = document.querySelectorAll(".starsClick");
+        let icons = document.querySelectorAll(".starIcons");
+        let goldStar = "/static/images/fill-favorite.png"
+        let greyStar = "/static/images/favorite-icon.svg"
+        let arr = [];
+
+
+
+
+        stars.forEach((item, index) => {
+            item.addEventListener('click',(e)=>{
+                let l=item.childNodes[1].src.split("/");
+                item.childNodes[1].src= item.childNodes[1].src.split("/")[item.childNodes[1].src.split("/").length-1]== "favorite-icon.svg"? goldStar : greyStar
+                console.log(l[l.length-1])
+                      fetch(e.currentTarget.title).then((res) => {
+
+                      });
+
+
+
+            })
+
+        })
+
+
+
+
+        // fetch(star.href).then((res)=>{
+        //     console.log(res,'ooooooooooooooooo')
+        // })
+
+
+
+        let el_id = 0
+
+
+        $('.rename-button').click(function (e) {
+            e.preventDefault()
+            if (el_id) {
+                window.location.href = "/dashboard/rename-file/" + el_id;
+            }
+        })
+
+         $('.open-button').click(function (e) {
+             e.preventDefault()
+             if (el_id) {
+                 window.location.href = "/dashboard/open/" + el_id;
+             }
+         })
+         $('.clear-button').click(function (e) {
+            e.preventDefault()
+            if (el_id) {
+                window.location.href = "/book/clear/" + el_id;
+            }
+        })
+    </script>
+{% endblock%}

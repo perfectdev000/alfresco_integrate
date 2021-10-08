@@ -1,0 +1,14 @@
+{% extends 'layouts/base.html' %}
+{% load crispy_forms_tags%}
+{% load file_full_path %}
+
+{% block content %}
+{% include 'layouts/navbar.html' %}
+{% include 'partials/alerts.html' %}
+
+{% for id,file in file_name.items %}
+<a href="/media/{% get_path id=id %}" target="_blank" > {{ file }}</a>
+<br>
+{% endfor %}
+
+{% endblock %}

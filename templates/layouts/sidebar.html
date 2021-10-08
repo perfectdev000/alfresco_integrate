@@ -1,0 +1,391 @@
+{% load static %}
+
+<div class="sidebar-offcanvas" id="sidebar" role="navigation">
+    <aside class="">
+        <div class="container nopadding">
+            <ul class="nav nav-tabs">
+                <li class="row1"><a data-toggle="tab" href="#home"> Filter</a></li>
+                <li class=""><a data-toggle="tab" href="#folder"> Reports</a></li>
+                <li class="analyze-list"><a data-toggle="tab" href="#analyze"> Analyze</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                    <p>File Type</p>
+                    <ul class="select-type">
+                        <li><a href="#">PDF</a></li>
+                        <li><a href="#">DOC</a></li>
+                        <li><a href="#">TXT</a></li>
+                    </ul>
+                    <p>Year</p>
+                    <div class="select-date">
+                        <input type="text" placeholder="2008"/>
+                        <span>to</span>
+                        <input type="text" placeholder="2009"/>
+                    </div>
+                    <p>Author Name</p>
+                    <div class="search-name">
+                        <input type="text" placeholder="Search by author name"/>
+                    </div>
+                    <p>Key words</p>
+                    <div class="search-name">
+                        <input type="text" placeholder="Write a key word"/>
+                    </div>
+                    <button type="button" class="type-button blue-btn">books</button>
+                    <button type="button" class="type-button red-btn">Statistics</button>
+                </div>
+                <div id="folder" class="tab-pane fade">
+                    <div class="container-fluid nopadding">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- menu -->
+                                <div id="MainMenu">
+                                    <div class="list-group panel">
+                                        <a href="#demo1"
+                                           class="list-group-item list-group-item-success collapsed"
+                                           data-toggle="collapse" data-parent="#MainMenu"
+                                           aria-expanded="false">
+                                            Layout
+                                        </a>
+                                        <div class="collapse" id="demo1">
+                                            <a href="#SubMenu2" class="list-group-item subitem"
+                                               data-toggle="collapse" data-parent="#SubMenu1">Folder
+                                                number 1</a>
+                                            <a href="javascript:;" class="list-group-item subitem">Folder
+                                                number 2</a>
+                                            <a href="javascript:;" class="list-group-item subitem">Folder
+                                                number 3</a>
+                                        </div>
+                                        <a href="#demo2"
+                                           class="list-group-item list-group-item-success collapsed"
+                                           data-toggle="collapse" data-parent="#MainMenu"
+                                           aria-expanded="false">
+                                            Title
+                                        </a>
+                                        <div class="collapse" id="demo2" style="">
+                                            <a href="#SubMenu2" class="list-group-item subitem"
+                                               data-toggle="collapse" data-parent="#SubMenu2">Folder
+                                                number 1</a>
+                                            <a href="javascript:;" class="list-group-item subitem">Folder
+                                                number 2</a>
+                                            <a href="javascript:;" class="list-group-item subitem">Folder
+                                                number 3</a>
+                                        </div>
+                                        <a href="#demo3"
+                                           class="list-group-item list-group-item-success collapsed"
+                                           data-toggle="collapse" data-parent="#MainMenu"
+                                           aria-expanded="false">
+                                            Tag Item
+                                        </a>
+                                        <div class="collapse" id="demo3" style="">
+                                            <a href="#SubMenu3" class="list-group-item subitem"
+                                               data-toggle="collapse" data-parent="#SubMenu3">Folder
+                                                Name 1 </a>
+                                            <a href="javascript:;" class="list-group-item subitem">Folder
+                                                number 2</a>
+                                            <a href="javascript:;" class="list-group-item subitem">Folder
+                                                number 3</a>
+                                        </div>
+                                        <a href="#demo4"
+                                           class="list-group-item list-group-item-success collapsed"
+                                           data-toggle="collapse" data-parent="#MainMenu"
+                                           aria-expanded="false">
+                                            Add Note
+                                        </a>
+                                        <div class="collapse" id="demo4" style="">
+                                            <a href="#SubMenu4" class="list-group-item subitem"
+                                               data-toggle="collapse" data-parent="#SubMenu4">Folder
+                                                Name 1 </a>
+                                            <a href="javascript:;" class="list-group-item subitem">Folder
+                                                number 2</a>
+                                            <a href="javascript:;" class="list-group-item subitem">Folder
+                                                number 3</a>
+                                        </div>
+                                        <a href="#demo5"
+                                           class="list-group-item list-group-item-success collapsed"
+                                           data-toggle="collapse" data-parent="#MainMenu"
+                                           aria-expanded="false">
+                                            Review
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="analyze" class="tab-pane fade">
+                    <div id="MainMenu1">
+                        <div class="list-group panel">
+                            <a href="#analyze1"
+                               class="list-group-item list-group-item-success collapsed"
+                               data-toggle="collapse" data-parent="#MainMenu"
+                               aria-expanded="false"><span>Sources</span>
+                            </a>
+                            <div class="collapse" id="analyze1" style="">
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="switch1"
+                                           name="example">
+                                    <label class="custom-control-label" for="switch1">A source</label>
+                                </div>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="switch2"
+                                           name="example">
+                                    <label class="custom-control-label" for="switch2">A source
+                                        name</label>
+                                </div>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="switch3"
+                                           name="example">
+                                    <label class="custom-control-label" for="switch3">A source</label>
+                                </div>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="switch4"
+                                           name="example">
+                                    <label class="custom-control-label" for="switch4">A source
+                                        name</label>
+                                </div>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="switch5"
+                                           name="example">
+                                    <label class="custom-control-label" for="switch5">A source
+                                        name</label>
+                                </div>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="switch6"
+                                           name="example">
+                                    <label class="custom-control-label" for="switch6">A source
+                                        name</label>
+                                </div>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="switch7"
+                                           name="example">
+                                    <label class="custom-control-label" for="switch7">A source
+                                        name</label>
+                                </div>
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="switch8"
+                                           name="example">
+                                    <label class="custom-control-label" for="switch8">A source
+                                        name</label>
+                                </div>
+                            </div>
+                            <a href="#analyze2"
+                               class="list-group-item list-group-item-success collapsed"
+                               data-toggle="collapse" data-parent="#MainMenu" aria-expanded="false">
+                                Eligibility
+                            </a>
+                            <div class="collapse" id="analyze2" style="">
+                                <a href="#SubMenu2" class="list-group-item subitem"
+                                   data-toggle="collapse" data-parent="#SubMenu2">Folder number 1</a>
+                                <a href="javascript:;" class="list-group-item subitem">Folder number
+                                    2</a>
+                                <a href="javascript:;" class="list-group-item subitem">Folder number
+                                    3</a>
+                            </div>
+                            <a href="#analyze3"
+                               class="list-group-item list-group-item-success collapsed"
+                               data-toggle="collapse" data-parent="#MainMenu" aria-expanded="false">
+                                <span>Similarity % </span>
+                            </a>
+                            <div class="collapse" id="analyze3" style="">
+                                <br>
+                                <p>Set the percent</p>
+                                <span id="slider_value">Nothing yet.</span>
+                                <input type="range" class="custom-range" id="customRange1" value="0.5"
+                                       min="0.0" max="1.0" step="0.01"/>
+
+                                <p> Enter key words</p>
+                                <div class="search-name">
+                                    <input type="text" placeholder="eg: books, ice, home">
+                                </div>
+                                <button type="button" class="type-button blue-btn">books</button>
+                                <button type="button" class="type-button red-btn">Statistics</button>
+                                <br>
+                                <p>Path to a reference document</p>
+                                <div class="search-name">
+                                    <input type="text" placeholder="eg: file path is storage medium">
+                                </div>
+                            </div>
+                            <a href="#analyze4"
+                               class="list-group-item list-group-item-success collapsed"
+                               data-toggle="collapse" data-parent="#MainMenu" aria-expanded="false">
+                                Relevancy %
+                            </a>
+                            <div class="collapse" id="analyze4" style="">
+                                <a href="#SubMenu2" class="list-group-item subitem"
+                                   data-toggle="collapse" data-parent="#SubMenu2">Folder number 1</a>
+                                <a href="javascript:;" class="list-group-item subitem">Folder number
+                                    2</a>
+                                <a href="javascript:;" class="list-group-item subitem">Folder number
+                                    3</a>
+                            </div>
+                            <a href="#analyze5"
+                               class="list-group-item list-group-item-success collapsed"
+                               data-toggle="collapse" data-parent="#MainMenu" aria-expanded="false">
+                                Bias Check
+                            </a>
+                            <div class="collapse" id="analyze5" style="">
+                                <a href="#SubMenu2" class="radio-option list-group-item subitem"
+                                   data-toggle="collapse" data-parent="#SubMenu2">Select Documents</a>
+                                <a href="javascript:;" class="radio-option list-group-item subitem">Recently
+                                    Selected</a>
+                                <a href="#analyze56"
+                                   class="radio-option list-group-item list-group-item-success collapsed"
+                                   data-toggle="collapse" data-parent="#MainMenu" aria-expanded="false">Bias
+                                    Check Options</a>
+
+                                <div class="collapse radio-list" id="analyze56">
+                                    <!-- Default unchecked -->
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" class="custom-control-input"
+                                               id="defaultUnchecked1" name="defaultExampleRadios">
+                                        <label class="custom-control-label"
+                                               for="defaultUnchecked1"><span>By Date</span></label>
+                                    </div>
+
+                                    <!-- Default checked -->
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" class="custom-control-input"
+                                               id="defaultChecked2" name="defaultExampleRadios" checked>
+                                        <label class="custom-control-label" for="defaultChecked2">By
+                                            Location</label>
+                                    </div>
+
+                                    <!-- Default checked -->
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" class="custom-control-input"
+                                               id="defaultChecked3" name="defaultExampleRadios" checked>
+                                        <label class="custom-control-label" for="defaultChecked3">By
+                                            Facility </label>
+                                    </div>
+
+                                    <!-- Default checked -->
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" class="custom-control-input"
+                                               id="defaultChecked4" name="defaultExampleRadios" checked>
+                                        <label class="custom-control-label" for="defaultChecked4">By
+                                            Population </label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" class="custom-control-input"
+                                               id="defaultChecked5" name="defaultExampleRadios" checked>
+                                        <label class="custom-control-label" for="defaultChecked5">By
+                                            Author </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <a href="#analyze6"
+                               class="list-group-item list-group-item-success collapsed"
+                               data-toggle="collapse" data-parent="#MainMenu" aria-expanded="false">
+                                Quality Check
+                            </a>
+                            <div class="collapse" id="analyze6" style="">
+                                <a href="#SubMenu2" class="list-group-item subitem"
+                                   data-toggle="collapse" data-parent="#SubMenu2">Folder number 1</a>
+                                <a href="javascript:;" class="list-group-item subitem">Folder number
+                                    2</a>
+                                <a href="javascript:;" class="list-group-item subitem">Folder number
+                                    3</a>
+                            </div>
+                            <a href="#analyze7"
+                               class="list-group-item list-group-item-success collapsed"
+                               data-toggle="collapse" data-parent="#MainMenu" aria-expanded="false">
+                                Screening
+                            </a>
+                            <div class="collapse" id="analyze7" style="">
+                                <a href="#SubMenu2" class="list-group-item subitem"
+                                   data-toggle="collapse" data-parent="#SubMenu2">Folder number 1</a>
+                                <a href="javascript:;" class="list-group-item subitem">Folder number
+                                    2</a>
+                                <a href="javascript:;" class="list-group-item subitem">Folder number
+                                    3</a>
+                            </div>
+
+                            <a href="#modeling"
+                               class="list-group-item list-group-item-success collapsed"
+                               data-toggle="collapse" data-parent="#MainMenu" aria-expanded="false">
+                                Topic Modeling
+                            </a>
+                            <div class="collapse" id="modeling" style="">
+                                <a href="#SubMenu2" class="list-group-item subitem"
+                                   data-toggle="collapse" data-parent="#SubMenu2">Folder number 1</a>
+                                <a href="javascript:;" class="list-group-item subitem">Folder number
+                                    2</a>
+                                <a href="javascript:;" class="list-group-item subitem">Folder number
+                                    3</a>
+                            </div>
+                            <a href="#frequencies"
+                               class="list-group-item list-group-item-success collapsed"
+                               data-toggle="collapse" data-parent="#MainMenu" aria-expanded="false">
+                                Frequencies
+                            </a>
+                            <div class="collapse" id="frequencies" style="">
+                                <a href="#SubMenu2" class="list-group-item subitem"
+                                   data-toggle="collapse" data-parent="#SubMenu2">Folder number 1</a>
+                                <a href="javascript:;" class="list-group-item subitem">Folder number
+                                    2</a>
+                                <a href="javascript:;" class="list-group-item subitem">Folder number
+                                    3</a>
+                            </div>
+                            <a href="#terms"
+                               class="list-group-item list-group-item-success collapsed"
+                               data-toggle="collapse" data-parent="#MainMenu" aria-expanded="false">
+                                Important Terms(TFIDF)
+                            </a>
+                            <div class="collapse" id="terms" style="">
+                                <a href="#SubMenu2" class="list-group-item subitem"
+                                   data-toggle="collapse" data-parent="#SubMenu2">Folder number 1</a>
+                                <a href="javascript:;" class="list-group-item subitem">Folder number
+                                    2</a>
+                                <a href="javascript:;" class="list-group-item subitem">Folder number
+                                    3</a>
+                            </div>
+
+                            <a href="#words"
+                               class="list-group-item list-group-item-success collapsed"
+                               data-toggle="collapse" data-parent="#MainMenu" aria-expanded="false">
+                                Bag Of Words
+                            </a>
+                            <div class="collapse" id="words" style="">
+                                <a href="#SubMenu2" class="list-group-item subitem"
+                                   data-toggle="collapse" data-parent="#SubMenu2">Folder number 1</a>
+                                <a href="javascript:;" class="list-group-item subitem">Folder number
+                                    2</a>
+                                <a href="javascript:;" class="list-group-item subitem">Folder number
+                                    3</a>
+                            </div>
+                            <a href="#analyze8"
+                               class="list-group-item list-group-item-success collapsed"
+                               data-toggle="collapse" data-parent="#MainMenu" aria-expanded="false">
+                                Rules
+                            </a>
+                            <div class="collapse" id="analyze8" style="">
+                                <a href="#SubMenu2" class="list-group-item subitem"
+                                   data-toggle="collapse" data-parent="#SubMenu2">Folder number 1</a>
+                                <a href="javascript:;" class="list-group-item subitem">Folder number
+                                    2</a>
+                                <a href="javascript:;" class="list-group-item subitem">Folder number
+                                    3</a>
+                            </div>
+                            <a href="#analyze9"
+                               class="list-group-item list-group-item-success collapsed"
+                               data-toggle="collapse" data-parent="#MainMenu" aria-expanded="false">
+                                Taxonomy
+                            </a>
+                            <div class="collapse" id="analyze9" style="">
+                                <a href="#SubMenu2" class="list-group-item subitem"
+                                   data-toggle="collapse" data-parent="#SubMenu2">Folder number 1</a>
+                                <a href="javascript:;" class="list-group-item subitem">Folder number
+                                    2</a>
+                                <a href="javascript:;" class="list-group-item subitem">Folder number
+                                    3</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+</div>

@@ -1,0 +1,194 @@
+{% load static %}
+
+<ul class="drop-menu dashboard-menu navbar  navbar-toggleable-sm navbar-invers nopadding dashboard-header admin-dashboard container flex">
+    <li>
+        Window
+    </li>
+    <li class="btn-group active">
+        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            <img src="{% static 'images/project-icon.svg'%}" class="d-inline" alt="icon" width="30"></i>
+            <span>File </span>
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#folderModal">Open</a>
+            <a class="dropdown-item recent-open-folder" href="#">Open Recent</a>
+            <a class="dropdown-item close-file-menu" href="#">Close</a>
+        </div>
+    </li>
+    <li class="btn-group active">
+        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            <img src="{% static 'images/project-icon.svg'%}" class="d-inline" alt="icon" width="30"></i>
+            <span>Project </span>
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#new_project_model" id="new_project" >New Project</a>
+            <!-- <a class="dropdown-item" href="{% url 'open_file' %}">New Project</a> -->
+            <!-- <a class="dropdown-item" href="#">New from Template</a> -->
+            <a class="dropdown-item open-project-button" href="#">Open Project</a>
+            <!-- <a class="dropdown-item" href="#">Open Recent</a> -->
+            <!-- <a class="dropdown-item" href="#">Import Project</a> -->
+            <!-- <a class="dropdown-item" href="#">Export Project</a> -->
+            <a class="dropdown-item" href="#">Close</a>
+            <a class="dropdown-item save-button" id="saveButton" href="#" download >Save</a>
+            <!-- <a class="dropdown-item" href="#" type="application/octet-stream">Save as</a> -->
+            <!-- <a class="dropdown-item rename-button" href="">Rename</a> -->
+        </div>
+    </li>
+    <li class="btn-group">
+        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            <img src="{% static 'images/edit-icon.svg'%}" class="d-inline" alt="icon" width="30">
+            <span>Edit</span>
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item cut-button" href="">Cut</a>
+            <a class="dropdown-item past-button" href="#">Paste</a>
+            <a class="dropdown-item clear-button" href="">Clear</a>
+            <a class="dropdown-item" href="{% url 'clear_all' %}">Clear All</a>
+            <a class="dropdown-item" href="#">Find</a>
+            <a class="dropdown-item" href="#">Insert Symbols</a>
+        </div>
+    </li>
+    <li class="btn-group">
+        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            <img src="{% static 'images/update-icon.svg'%}" class="d-inline" alt="icon" width="30">
+            <span>Update</span>
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Recent Change</a>
+            <a class="dropdown-item" href="#">Entire Project</a>
+        </div>
+    </li>
+    <li class="btn-group">
+        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            <img src="{% static 'images/ingest-icon.svg'%}" class="d-inline" alt="icon" width="30">
+            <span>Ingest</span>
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'add_file' 'csv'%}">Structured Files (CSV, XLS)</a>
+            <a class="dropdown-item" href="{% url 'add_file' 'pdf'%}">Documents (PDF, TXT)</a>
+            <a class="dropdown-item" href="{% url 'add_file' 'jpg'%}">Scan Documents (PDF, JPEG)</a>
+            <a class="dropdown-item" href="{% url 'add_file' 'png'%}">Images (PNG)</a>
+            <a class="dropdown-item" href="{% url 'add_url_file' %}">From URL</a>
+        </div>
+    </li>
+    <li class="btn-group">
+        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            <img src="{% static 'images/insert-icon.svg'%}" class="d-inline" alt="icon" width="30">
+            <span>Insert</span>
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Comments</a>
+            <a class="dropdown-item" href="#">Pin Drop</a>
+            <a class="dropdown-item" href="#">Reminder</a>
+        </div>
+    </li>
+    <li>
+        <a href="uploadcv" class="print-btn btn  btn-lg" data-toggle="modal"
+            data-target="#print">
+            <img src="{% static 'images/print-icon.svg'%}" class="d-inline" alt="icon" width="30"> </i> <span>Print</span>
+        </a>
+    </li>
+    <li>
+        <a href="#"> <img src="{% static 'images/screenshot-icon.svg'%}" class="d-inline" alt="icon"
+                            width="30"> <span>screen shot</span> </a>
+    </li>
+    <li>
+        <a href="#"> <img src="{% static 'images/undo-icon.svg'%}" class="d-inline" alt="icon" width="30">
+            <span>undo</span> </a>
+    </li>
+    <li>
+        <a href="#"> <img src="{% static 'images/redo-icon.svg'%}" class="d-inline" alt="icon" width="30">
+            <span>redo</span> </a>
+    </li>
+    <li>
+        <a href="#"> <img src="{% static 'images/help-icon.svg'%}" class="d-inline" alt="icon" width="30">
+            <span>help</span> </a>
+
+    </li>
+</ul>
+
+<div class='project_relevant_model_collection'>
+    <!-- The Modal to open files -->
+    <div id="folderModal" class="modal fade " role="dialog" style="opacity: 1;">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content" id = "modal-wrapper">
+                {% include 'product/partial/file-manager-modal.html'%}
+            </div>
+
+        </div>
+    </div>
+
+    <!-- The Modal to enter name of project -->
+    <div id="new_project_model" class="modal fade" id="myModal">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title">New Project Name</h5>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <input type="text" class="form-control" placeholder="Enter Project Name" id="project_name">
+                    <div class="toast mt-1 hide">
+                        <!-- <div class="toast-header">
+                        </div> -->
+                        <div class="toast-body alert alert-danger">
+                            <strong>Name Error</strong><br>
+                            That name already exists.
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="create_new_project">&nbsp;&nbsp;Create&nbsp;&nbsp;</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">&nbsp;&nbsp;Close&nbsp;&nbsp;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Modal to select files of project -->
+    <div id="select_files_of_project_modal" class="modal" id="myModal">
+        <div class="modal-dialog  modal-dialog-scrollable modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title name_of_project">Add Files to Project...</h5>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form name = "select-files-of-project-form" id = "select-files-of-project-form" action = "{% url 'upload_file_from_alfresco' %}" method = "POST"  enctype="multipart/form-data">{% csrf_token %}
+                        <div class="select-files-of-project-wraper">
+                            {% include 'product/partial/select-files-of-project-modal.html'%}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Modal to show list of project -->
+    <div id="project_list_modal" class="modal" id="myModal">
+        <div class="modal-dialog  modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header" style="text-align: center; display: table-cell;">
+                    <h5 class="modal-title">Project List</h5>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body project_list">
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><h5>Cancel</h5></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

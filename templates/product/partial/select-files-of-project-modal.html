@@ -1,0 +1,48 @@
+{% load static %}
+
+    <input type="hidden" value="{{parent_id}}" id="project_file_modal_parent_id"/>
+    <input type="hidden" value="{{folder_id}}" id="project_file_modal_folder_id"/>
+    <h4>
+        <i class="fa fa-arrow-circle-left select-files-project-up-arrow"></i>
+    </h4>
+    <hr>
+    <input type="hidden" value="{{project_name}}" name="project_name" id="created_project_name"/>
+    <h4>Files Ingested</h4>
+    <h5>
+        <ul>
+            {% for item in entries %}
+                <div style="padding: 5px 10px 5px 20px;">
+                    {% if item.entry.isFolder %}
+                        <li class="item-of-project folder-item-of-project" data-type="folder" data-id="{{item.entry.id}}">
+                            <i class="fa fa-folder-o">&nbsp;{{item.entry.name}}</i>
+                        </li>
+                    {% else %}
+                        <li class="item-of-project file-item-of-project d-flex align-items-center" data-id="{{item.entry.id}}">
+                            <input type="checkbox" class="select_file_project_check" value="{{item.entry.id}}" name="id_checks">
+                            &nbsp;&nbsp;
+                            <i class="fa fa-file-o flex">&nbsp;{{item.entry.name}}</i>
+                        </li>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </ul>
+    </h5>
+    <hr>
+    <h4>Select New Files</h4>
+    <div class="row">
+        <div class="col-sm-6">&nbsp;&nbsp;Up Files</div>
+        <div class="col-sm-6">&nbsp;&nbsp;Taxonomy file</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <input type="file" class="form-control-file border" name="upload1" multiple="multiple">
+        </div>
+        <div class="col-sm-6">
+            <input type="file" class="form-control-file border" name="upload2" multiple="multiple">
+        </div>
+    </div>
+    <div class="row" style="margin-top: 5px;">
+        <div class="col-sm-12">
+            <button class="btn btn-success" style="width: 100%;" id="select-file-form-submit" >Submit</button>
+        </div>
+    </div>

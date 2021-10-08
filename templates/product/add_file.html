@@ -1,0 +1,22 @@
+{% extends 'layouts/base.html' %}
+{% load crispy_forms_tags%}
+
+
+{% block content %}
+{% include 'layouts/navbar.html' %}
+{% include 'partials/alerts.html' %}
+
+<div class="container">
+    <i class="loading-upload-processing fa fa-spin fa-spinner" style="display: none;"></i>
+    <h1 align='middle' >
+        ADD YOUR FILE HERE
+    </h1>
+    <form id="upload-file" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button class='btn btn-success' id="upload-file-btn">
+            ADD
+        </button>
+    </form>
+</div>
+{% endblock %}

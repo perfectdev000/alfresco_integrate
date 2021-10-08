@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html' %}
+
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+
+{% include 'dashboard.html' with data=files %}
+{% include 'partials/alerts.html' %}
+
+{% endblock %}
+<!-- ############################# -->
+
+

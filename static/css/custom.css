@@ -1,0 +1,57 @@
+.select_file_project_check{
+    cursor:pointer!important;
+}
+.item-of-project{
+    cursor:pointer!important;
+}
+.select-files-project-up-arrow{
+    cursor:pointer!important;
+}
+.checkbox-file{
+    cursor:pointer!important;
+}
+.custom-item-li{
+    cursor:pointer!important;
+}
+
+.one-line-bar{
+    border-top: solid 1px #e1e1e1;
+    border-bottom: solid 1px #e1e1e1;
+    padding: 4px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+.custom-title{
+    background-color: rgb(208, 218, 233);
+    border-radius: 0.5em;
+    padding: 0.3em;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.loading-upload-and-preprocess{
+    font-size:60px !important;
+    position:absolute;
+    top:350px;
+    left:50%;
+}
+.loading-upload-processing{
+    font-size:60px !important;
+    position:absolute;
+    top:40%;
+    left:50%;
+}
+.repository_title{
+    font-size: 1.2rem;
+    text-align: center;
+    padding:5px;
+    color:blue;
+}
+.loading_background{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    background-color: black;
+    z-index: 10;
+}

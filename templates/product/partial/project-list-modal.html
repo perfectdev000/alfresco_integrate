@@ -1,0 +1,13 @@
+<h5>
+    <ul>
+        {% for item in project_list %}
+            <div style="padding: 5px 10px 5px 20px;">
+                <li >
+                    <i class="fa fa-folder-o">
+                        <a href="#" data-id="" onclick="selected_project('{{item}}')"> &nbsp;{{item}}</a>
+                    </i>
+                </li>
+            </div>
+        {% endfor %}
+    </ul>
+</h5>

@@ -1,0 +1,42 @@
+{% load static %}
+
+<div class="nopadding admin-right">
+    <div class="table-scroll" style="min-height: 500px;">
+
+        {% include 'partials/second_level_navbar.html' %}
+        <i class="loading-upload-and-preprocess fa fa-spin fa-spinner" style="  display: none;"></i>
+        <input type="hidden" value="{{parent_id}}" id="parent_id"/>
+        {% if dashboard_method %}
+            <div class="content" style="display: none;">
+                <!----layouts/table.html--->
+                <div class="table-div" id="main-table">
+                    {% include 'layouts/data/data_list.html'%}
+                </div>
+                <!----layouts/table.html--->
+                <div class="row pl35" id="bottom-panel">bottom-panel</div>
+            </div>
+            <div class="project-multiview-content" style="display: block;">
+                {% include 'layouts/project-multifile-view.html'%}
+            </div>
+        {% else %}
+            <div class="content" style="display: block;">
+                <!----layouts/table.html--->
+                <div class="table-div" id="main-table">
+                    {% include 'layouts/data/data_list.html'%}
+                </div>
+                <!----layouts/table.html--->
+                <div class="row pl35" id="bottom-panel">bottom-panel</div>
+            </div>
+            <div class="project-multiview-content" style="display: none; min-height: 500px;">
+                {% include 'layouts/project-multifile-view.html'%}
+            </div>
+        {% endif %}
+
+        <!----Analysis part page--->
+        {% include 'layouts/Analysis-page.html'%}
+        <!----Analysis part page--->
+    </div>
+</div>
+</div>
+</div>
+</div>

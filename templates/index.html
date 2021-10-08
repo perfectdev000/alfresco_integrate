@@ -1,0 +1,288 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Sensai</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css'%}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}"/>
+        <script src="{% static 'js/jquery.min.js'%}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'js/bootstrap.js'%}"></script>
+    </head>
+    <body>
+        {% block header %}
+        <div class="wrapper">
+            <div class="generic-body">
+                <header>
+                    {% include 'partials/alerts.html' %}
+                    <div class="container header  main-container nopadding">
+                        <nav class="navbar navbar-expand-md navbar-light nopadding">
+                            <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'images/logo.svg'%}" alt="logo" height=""
+                                                                width=""></a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#collapsibleNavbar">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                                <ul class="nav navbar-nav nav-center">
+                                    <li class="nav-item"><a href="{% url 'dashboard' %}" class="nav-link">Product Details</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+                                    <li class="nav-item">
+                                        {% if not request.user.is_authenticated %}
+                                        <a href="{% url 'login' %}" class="nav-link">Login</a>
+                                        {% else %}
+                                        <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+                                        {% endif %}
+                                    </li>
+                                </ul>
+                                <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                                    <li class="dropdown order-1">
+                                        <button type="button" class="download-btn btn">Download SENSAI</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </header>
+                <section class="main-container container">
+                    <div class="row">
+                        <div class="col-lg-10 col-md-10 ">
+                            <h2 class="title">Make research easier</h2>
+                            <p class="description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                                eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                                takimata sanctus est Lorem ipsum dolor sit.</p>
+                            <div class="button-box">
+                                <button class="generic-btn white-btn">
+                                    Buy now
+                                </button>
+                                <button class="generic-btn">
+                                    learn more
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-3 icon-panel">
+                            <div><img src="{% static 'images/pdf-icon.svg'%}"/></div>
+                            <div><img src="{% static 'images/page.svg'%}"/></div>
+                            <div><img src="{% static 'images/txt-icon.svg'%}"/></div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-3 circle-panel">
+                            <div class="circle">
+                                <span><span></span></span>
+                            </div>
+                            <div class="circle">
+                                <span><span></span></span>
+                            </div>
+                            <div class="circle noafter">
+                                <span><span></span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="middle-title">Four ways to help you research easier</h2>
+                    <section class="row middle-banner">
+                        <div class="col-sm-12 col-md-2 col-lg-1 nopadding">
+                            <img src="{% static 'images/page.svg'%}"/>
+                        </div>
+                        <div class="col-sm-12 col-md-10 col-lg-8">
+                            <div class="row">
+                                <div class="col-lg-1 col-md-1  col-sm-1 number-list">
+                                    01
+                                </div>
+                                <div class="col-lg-11 col-md-11 col-sm-12">
+                                    <p class="research-description">Are your PDFs littered across your desk or PC?</p>
+                                    <p class="light-txt">
+                                        Sensai keeps all your PDFs secure and makes them instantly accessible and searchable
+                                        across all your devices.
+                                        Automatic identification, tagging and categorization of your PDFs means you never have
+                                        to go hunting for that missing paper again.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="row middle-banner banner-details">
+                        <div class="col-lg-1"></div>
+                        <div class="col-sm-12 col-md-8 col-lg-8">
+                            <div class="row banner-details">
+                                <div class="text-right  col-sm-12 col-md-11 col-lg-11  pr40">
+                                    <p class="research-description">Are your PDFs littered across your desk or PC?</p>
+                                    <p class="light-txt details-txt">
+                                        Sensai keeps all your PDFs secure and makes them instantly accessible and searchable
+                                        across all your devices.
+                                        Automatic identification, tagging and categorization of your PDFs means you never have
+                                        to go hunting for that missing paper again.
+                                    </p>
+                                </div>
+                                <div class="col-lg-1 col-md-1  col-sm-1  number-list number2">
+                                    02
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-2 col-lg-1 nopadding ml5">
+                            <img src="{% static 'images/bookmark.svg'%}"/>
+                        </div>
+                    </section>
+                    <section class="row middle-banner">
+                        <div class="col-sm-12 col-md-2 col-lg-1 nopadding">
+                            <img src="{% static 'images/loop.svg'%}"/>
+                        </div>
+                        <div class="col-sm-12 col-md-10 col-lg-8">
+                            <div class="row">
+                                <div class="col-lg-1 col-md-1  col-sm-1 number-list">
+                                    03
+                                </div>
+                                <div class="col-lg-11 col-md-11 col-sm-12">
+                                    <p class="research-description">Are your PDFs littered across your desk or PC?</p>
+                                    <p class="light-txt">
+                                        Sensai keeps all your PDFs secure and makes them instantly accessible and searchable
+                                        across all your devices.
+                                        Automatic identification, tagging and categorization of your PDFs means you never have
+                                        to go hunting for that missing paper again.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="row middle-banner ok ">
+                        <div class="col-lg-1"></div>
+                        <div class="col-sm-12 col-md-8 col-lg-8">
+                            <div class="row ok">
+                                <div class="text-right  col-sm-12 col-md-11 col-lg-11 pr40">
+                                    <p class="research-description">Are your PDFs littered across your desk or PC?</p>
+                                    <p class="details-txt light-txt">
+                                        Sensai keeps all your PDFs secure and makes them instantly accessible and searchable
+                                        across all your devices.
+                                        Automatic identification, tagging and categorization of your PDFs means you never have
+                                        to go hunting for that missing paper again.
+                                    </p>
+                                </div>
+                                <div class="col-lg-1 col-md-1  col-sm-1  number-list number2">
+                                    04
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-2 col-lg-1 nopadding">
+                            <img src="{% static 'images/page.svg'%}"/>
+                        </div>
+                    </section>
+                    <section class="slider-section">
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <div id="demo" class="carousel slide" data-ride="carousel">
+
+                                    <ul class="carousel-indicators">
+                                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                                        <li data-target="#demo" data-slide-to="1"></li>
+                                        <li data-target="#demo" data-slide-to="2"></li>
+                                        <li data-target="#demo" data-slide-to="3"></li>
+                                    </ul>
+                                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                                        <span class="carousel-control-prev-icon"></span>
+                                    </a>
+                                    <!-- The slideshow -->
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item row active">
+                                            <div class="row">
+                                                <div class="col-lg-12 slider-box">
+                                                    <img src="{% static 'images/slider-item.png'%}" alt="slider-item">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item row">
+                                            <div class="row">
+                                                <div class="col-lg-12 slider-box">
+                                                    <img src="{% static 'images/slider-item.png'%}" alt="slider-item">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item row">
+                                            <div class="row">
+                                                <div class="col-lg-12 slider-box">
+                                                    <img src="{% static 'images/slider-item.png'%}" alt="slider-item">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Left and right controls -->
+                                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                                        <span class="carousel-control-prev-icon"></span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                                        <span class="carousel-control-next-icon"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 right-banner">
+                                <div>
+                                    <button>Download SENSAI</button>
+                                </div>
+                                <div class="empty-space"></div>
+                                <h2>Lorem ipsum dolor</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vulputate auctor rutrum. Lorem
+                                    ipsum dolor sit amet, consectetur adipiscing elit. Cras vulputate auctor rutrum.</p>
+                            </div>
+                        </div>
+                    </section>
+            </div>
+            <div class="white-banner"></div>
+            <div class="company-description">
+                <h2 class="text-center">Some Motivation Text to join company</h2>
+                <p class="text-center">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+                    dolore magna aliquyam erat, sed diam voluptua.
+                    At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                    est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+                    eos et accusam et justo duo dolores et ea rebum. Stet clita kasd.
+                </p>
+            </div>
+            </section>
+
+            <footer>
+                <div class="container">
+                    <div class="social-list flex-center">
+                        <a href=""><img src="{% static 'images/fb-icon.svg'%}"/></a>
+                        <a href=""><img src="{% static 'images/twitter-icon.svg'%}"/></a>
+                        <a href=""><img src="{% static 'images/insta-icon.svg'%}"/></a>
+                        <a href=""><img src="{% static 'images/tel-icon.svg'%}"/></a>
+                    </div>
+                </div>
+                <ul class="footer-menu flex-center">
+                    <li>
+                        <a href="#">Product Details</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Pricing</a>
+                    </li>
+                    <li>
+                        <a href="#">Terms of Use</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+                </ul>
+                <ul class="footer-menu flex-center">
+                    <li>
+                        <a href="#">E-mail: hello@sensai.com</a>
+                    </li>
+                    <li>
+                        <a href="#">Phone: 080 5183 2508</a>
+                    </li>
+                </ul>
+                <p class="text-center copyright">© 2019 Sensai, All Rights Reserved.</p>
+            </footer>
+
+        </div>
+        {% endblock header %}
+    </body>
+</html>
+

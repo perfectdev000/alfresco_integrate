@@ -1,0 +1,31 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.dashboard, name='dashboard'),
+    path('rename-file/<int:pk>', views.rename_file, name='rename_file'),
+    path('add_file/<str:value>', views.add_file, name='add_file'),
+    path('add_url_file', views.add_url_file, name='add_url_file'),
+    path('open-file/', views.open_file, name='open_file'),
+    path('add-favorite/<int:pk>/', views.add_favorite, name='add_favorite'),
+    path('favorite_list/', views.favorite_list, name='favorite_list'),
+    path('open/<int:pk>/', views.open, name='open'),
+    path('main-table/<str:parent_id>', views.main_table, name='main_table'),
+    path('bottom-panel/<str:node_id>', views.bottom_panel, name='bottom_panel'),
+    path('post-rating/<str:node_id>/<int:rating>', views.post_rating, name='post_rating'),
+    path('post-favorites/<str:node_id>/<int:favo>', views.post_favorites, name='post_favorites'),
+    path('file-manager/<str:parent_id>', views.file_manager, name='file_manager'),
+    path('file-manager/open-file/<str:node_id>', views.browser_open_file, name='open_file'),
+    path('file-manager/delete-files/', views.delete_files, name='delete_files'),
+    path('create-folder/<str:parent_id>/<str:folder_name>', views.create_folder, name='create_folder'),
+    path('post-tag/<str:node_id>/<str:tag>', views.post_tag, name='post_tag'),
+    path('edit-txt-file/<str:node_id>/<str:filename>/<str:parent_id>', views.edit_txt_file, name='edit_txt_file'),
+    path('update-google-document/<str:google_id>/<str:filename>/<str:parent_id>', views.update_google_document, name='update-google-document'),
+    path('update_file/', views.update_file, name='update_file'),
+    path('project-multifile-view/<str:project_name>', views.project_multifile_view, name='project_multifile_view'),
+    path('project-name-check/<str:project_name>', views.project_name_check, name='project_name_check'),
+    path('project-list', views.project_list, name='project_list'),
+    path('upload-file-from-alfresco/', views.upload_file_from_alfresco, name='upload_file_from_alfresco'),
+    path('select-files-of-project/<str:parent_id>', views.select_files_of_project, name='select_files_of_project'),
+    path('preview-file/<str:project>/<str:file>', views.preview_file, name='preview_file'),
+]

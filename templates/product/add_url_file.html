@@ -1,0 +1,21 @@
+{% extends 'layouts/base.html' %}
+{% load crispy_forms_tags%}
+
+
+{% block content %}
+{% include 'layouts/navbar.html' %}
+{% include 'partials/alerts.html' %}
+
+<div class="container">
+    <h1 align='middle' >
+        ADD YOUR URL DOCUMENTS HERE
+    </h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type='submit' class='btn btn-success'>
+            ADD
+        </button>
+    </form>
+</div>
+{% endblock %}

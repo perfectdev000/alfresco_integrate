@@ -1,0 +1,57 @@
+{% load static %}
+
+<div>
+    <div class="new_content">
+        <img src="{% static 'images/dashboard-item.svg' %}" class="d-inline" alt="icon" width="">
+        <div class="color-type">
+            <div>
+                <span class="red"></span>
+                <p>word, meaning color</p>
+            </div>
+            <div>
+                <span class="orange"></span>
+                <p>word, meaning color</p>
+            </div>
+            <div>
+                <span class="green"></span>
+                <p>word, meaning color</p>
+            </div>
+            <div>
+                <span class="l-blue"></span>
+                <p>word, meaning color</p>
+            </div>
+            <div>
+                <span class="blue"></span>
+                <p>word, meaning color</p>
+            </div>
+        </div>
+    </div>
+    <div class="upload-files">
+        <div class="form-group">
+            <input type="file" name="file" id="file" class="input-file"/>
+            <label for="file" class="btn btn-tertiary js-labelFile">
+                <img src="{% static 'images/upload.svg' %}" class="d-inline" alt="icon" width="80">
+                <span class="js-fileName">Upload or Select Documents<br> to see thes Geo Tag</span>
+            </label>
+        </div>
+    </div>
+    <div class="map-banner">
+        <div class="container-fluid">
+            <div class="map-responsive">
+                <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Eiffel+Tower+Paris+France"
+                        width="600" height="450" frameborder="0" style="border:0"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="date-details">
+        <div class="date-details-inner">
+            <div class="grey-box">
+            </div>
+            <div class="grey-box">
+            </div>
+            <div class="grey-box">
+            </div>
+        </div>
+    </div>
+</div>

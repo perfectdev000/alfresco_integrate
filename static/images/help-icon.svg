@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
+  <g id="help_icon" data-name="help icon" transform="translate(-1132 -263)">
+    <g id="_906794" data-name="906794" transform="translate(1137 268)">
+      <g id="Group_3306" data-name="Group 3306">
+        <g id="Group_3305" data-name="Group 3305">
+          <circle id="Ellipse_4318" data-name="Ellipse 4318" cx="1.014" cy="1.014" r="1.014" transform="translate(9.372 14.341)" fill="#6b7280"/>
+          <path id="Path_2302" data-name="Path 2302" d="M10.386,0A10.386,10.386,0,1,0,20.771,10.386,10.38,10.38,0,0,0,10.386,0Zm0,19.149a8.763,8.763,0,1,1,8.763-8.763A8.758,8.758,0,0,1,10.386,19.149Z" fill="#6b7280"/>
+          <path id="Path_2303" data-name="Path 2303" d="M179.246,128.5A3.249,3.249,0,0,0,176,131.746a.811.811,0,0,0,1.623,0,1.623,1.623,0,1,1,1.623,1.623.811.811,0,0,0-.811.811v2.028a.811.811,0,0,0,1.623,0v-1.32a3.246,3.246,0,0,0-.811-6.388Z" transform="translate(-168.86 -123.287)" fill="#6b7280"/>
+        </g>
+      </g>
+    </g>
+    <rect id="Rectangle_4024" data-name="Rectangle 4024" width="31" height="31" transform="translate(1132 263)" fill="none"/>
+  </g>
+</svg>

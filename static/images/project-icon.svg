@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
+  <g id="project_icon" data-name="project icon" transform="translate(-421 -263)">
+    <rect id="Rectangle_4023" data-name="Rectangle 4023" width="31" height="31" transform="translate(421 263)" fill="none"/>
+    <rect id="Rectangle_4024" data-name="Rectangle 4024" width="31" height="31" transform="translate(421 263)" fill="none"/>
+    <g id="Group_3315" data-name="Group 3315" transform="translate(2 1)">
+      <g id="_246698" data-name="246698" transform="translate(426.592 269)">
+        <g id="Group_3314" data-name="Group 3314" transform="translate(0 0)">
+          <path id="Path_2306" data-name="Path 2306" d="M18.056,53.1H9.791L7.179,51.36a.95.95,0,0,0-.527-.16H.95a.95.95,0,0,0-.95.95v13.3a.95.95,0,0,0,.95.95H18.056a.95.95,0,0,0,.95-.95v-11.4A.95.95,0,0,0,18.056,53.1Zm0,12.354H.95V52.15h5.7l2.851,1.9h8.553Z" transform="translate(0 -51.2)" fill="#6b7280"/>
+        </g>
+      </g>
+      <path id="Subtraction_54" data-name="Subtraction 54" d="M18.057,15.206H.951A.952.952,0,0,1,0,14.255V.951A.952.952,0,0,1,.951,0H3.024V.951H.951v13.3H18.057V11.663h.95v2.592A.951.951,0,0,1,18.057,15.206Z" transform="translate(424 271.592)" fill="#6b7280"/>
+    </g>
+  </g>
+</svg>

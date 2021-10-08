@@ -1,0 +1,108 @@
+{% load static%}
+{% load file_full_path %}
+
+{% if visible == True %}
+<div class="repository_title"><B><i>{{folder_name}}</i></B> &nbsp;repository</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="row">
+                <div class="custom-control custom-checkbox checkbox-action">
+                    <input type="checkbox" class="custom-control-input" name="checkbox"
+                            id="tablechecked1">
+                    <label class="custom-control-label" for="tablechecked1"></label>
+                </div>
+            </th>
+            <th scope="col"></th>
+            <th scope="col">Author</th>
+            <th scope="col">Year</th>
+            <th scope="col">Title</th>
+            <th scope="col">Journal</th>
+            <th scope="col">More</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in entries %}
+            {% if item.entry.nodeType == "cm:content" %}
+            <tr class="main-table-item" data-id="{{ item.entry.id }}">
+                {% if sorted %}
+                    {% ifchanged %}
+                        <tr>
+                            <td colspan="8">
+                                <p align="center" class="date-decoration">
+                                    {{item.date}}
+                                </p>
+                            </td>
+                        </tr>
+                    {% endifchanged %}
+                {% endif %}
+                <td scope="row">
+                    <div class="custom-control custom-checkbox checkbox-action">
+                        <input type="checkbox" class="custom-control-input"
+                                id="tablechecked3{{ item.entry.id }}">
+                        <label class="custom-control-label custom-control-label1" id="{{ item.entry.id }}"
+                                for="tablechecked3{{ item.entry.id }}"></label>
+                    </div>
+                </td>
+                <td>
+                    {% if item.entry.content.mimeType == "txt" %}
+                    <img src="{% static 'images/txt-sml-icon.svg' %}" width="20" class="d-inline"/>
+                    {% elif item.entry.content.mimeType == "pdf" %}
+                    <img src="{% static 'images/pdf-sml-icon.svg' %}" width="20" class="d-inline"/>
+                    {% elif item.entry.content.mimeType == "image/png" %}
+                    <img src="{% static 'images/txt-sml-icon.svg'%}" width="20" class="d-inline"/>
+                    {% elif item.entry.content.mimeType == "csv" %}
+                    <img src="{% static 'images/csv-sml-icon.svg' %}" width="20" class="d-inline"/>
+                    {% else %}
+                    <img src="{% static 'images/writing.svg'%}" width="20" class="d-inline"/>
+                    {% endif %}
+                    <span class="doc_title_span">{{item.entry.name}}</span>
+                </td>
+                <td>{% get_value dict=item.entry.properties key="cm:author" %}</td>
+                <td>{% get_value dict=item.entry.properties key="cm:year" %}</td>
+                <td>{% get_value dict=item.entry.properties key="cm:title" %}</td>
+                <td>{% get_value dict=item.entry.properties key="cm:journal" %}</td>
+                <td>
+                    <button type="button" class="folder-btn float-left" data-toggle="modal"
+                            data-target="#myModal">
+                        <svg id="Component_4_13" data-name="Component 4 – 13"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24">
+                            <rect id="Rectangle_3891" data-name="Rectangle 3891" width="24"
+                                    height="24" fill="none"></rect>
+                            <path id="Union_32" class="doc-icon" data-name="Union 32"
+                                    d="M4043.854,5992a.853.853,0,0,1-.678-.329.821.821,0,0,1-.175-.514h0v-14.265a.9.9,0,0,1,.91-.892h6.262l1.666,2.286h8.251a.9.9,0,0,1,.911.892v2.047h1.162a.883.883,0,0,1,.838.971v.057l-3.409,9.155a.843.843,0,0,1-.816.592Zm3.208-9.986-3.4,9.128a.173.173,0,0,0,.041.132.181.181,0,0,0,.149.074h14.921a.19.19,0,0,0,.182-.137l3.373-9.066c-.008-.089-.041-.268-.167-.268h-14.919A.188.188,0,0,0,4047.062,5982.014Zm-3.4-5.122v12.3l2.761-7.375a.835.835,0,0,1,.674-.58.867.867,0,0,1,.143-.012h13.089v-2.047a.242.242,0,0,0-.244-.239H4051.5l-1.666-2.286h-5.919A.243.243,0,0,0,4043.667,5976.892Zm6.066,13.64-1.633-1.633a.335.335,0,0,1,0-.478l1.633-1.633a.327.327,0,0,1,.238-.1.347.347,0,0,1,.239.1.339.339,0,0,1,0,.479l-1.053,1.053h1.971a2.939,2.939,0,0,0,2.335-1.144.343.343,0,0,1,.269-.131.338.338,0,0,1,.208.07.343.343,0,0,1,.063.477,3.612,3.612,0,0,1-2.872,1.407h-1.971l1.052,1.053a.339.339,0,0,1-.48.48Zm6.086-3.957a.337.337,0,0,1,0-.48l1.053-1.051H4054.9a2.939,2.939,0,0,0-2.335,1.145.343.343,0,0,1-.269.131.332.332,0,0,1-.208-.071.343.343,0,0,1-.063-.477,3.61,3.61,0,0,1,2.872-1.409h1.971l-1.052-1.052a.339.339,0,0,1,.48-.479l1.633,1.632a.339.339,0,0,1,0,.479l-1.633,1.632a.332.332,0,0,1-.238.1A.341.341,0,0,1,4055.819,5986.575Z"
+                                    transform="translate(-4041 -5971.731)" fill="#5e6167"></path>
+                        </svg>
+                    </button>
+                    <a title="" class="starsClick">
+                        {% if item.favorite %}
+                        <img src="/static/images/fill-favorite.png" class="d-inline" alt="icon"
+                                width="20" id="{{item.entry.id}}" />
+                        {% else %}
+                        <img src="/static/images/favorite-icon.svg" class="d-inline" alt="icon" width="20"
+                                id="{{item.entry.id}}"/>
+                        {% endif %}
+                    </a>
+                    <svg id="Component_6_47" class="star-icon" data-name="Component 6 – 47"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24">
+                        <rect id="Rectangle_3890" data-name="Rectangle 3890" width="24"
+                                height="24" fill="none"/>
+                        <g id="Group_3178" data-name="Group 3178"
+                            transform="translate(-1264 -155)">
+                            <circle id="Ellipse_375" data-name="Ellipse 375" cx="2" cy="2" r="2"
+                                    transform="translate(1274 173)" fill="#5e6167"/>
+                            <circle id="Ellipse_376" data-name="Ellipse 376" cx="2" cy="2" r="2"
+                                    transform="translate(1274 157)" fill="#5e6167"/>
+                            <circle id="Ellipse_377" data-name="Ellipse 377" cx="2" cy="2" r="2"
+                                    transform="translate(1274 165)" fill="#5e6167"/>
+                        </g>
+                    </svg>
+                </td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}

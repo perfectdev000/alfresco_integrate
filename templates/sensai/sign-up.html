@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+{% block header %}
+
+<div class="generic-body-login">
+    <div class="modal" id="signup">
+        <div class="modal-dialog generic-modal">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form method="POST">
+                        <div class="form-group">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                        </div>
+                        <div class="form-check">
+                            <div class="form-group">
+                                <input type="checkbox" id="check" class="cagree">
+                                <label for="check">I have accepted the Term and Conditions</label>
+
+                            </div>
+                        </div>
+                        <div class="btn-decoration"><span>Sign up</span></div>
+                        <button type="submit" class="btn btn-primary generic-btn">Sign up</button>
+                        <div class="sign-up-details">
+                            <a href="{% url 'login' %}" class="nav-link login-btn"> Login</a> <span> if you already have an account.</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    {% endblock header %}

@@ -1,0 +1,65 @@
+{% load static%}
+{% load file_full_path %}
+
+<div class="col-lg-2">
+    <p>Author</p>
+    <p>{% get_value dict=data.properties key='cm:author' %}</p>
+    <input type="hidden" value="{{data.id}}" id="node_id"/>
+    <input type="hidden" value="{{data.rating.0.entry.aggregate.average}}" id="my_rating" />
+    <p class="rate-text">Rating</p>
+    <div class="star-rating">
+        {% for i in five_number %}
+            {% if i|add:"0" <= ratings.0.entry.aggregate.average|add:"0" %}
+                <span class="fa fa-star" data-rating="{{i}}", entry="{{ratings.0.entry.aggregate.average}}"></span>
+            {% else %}
+                <span class="fa fa-star-0" data-rating="{{i}}", entry="{{ratings.0.entry.aggregate.average}}"></span>
+            {% endif %}
+        {% endfor %}
+        <input type="hidden" name="whatever1" class="rating-value" value="2.56"/>
+    </div>
+    <div class="rate-text">
+        <span>Like</span>
+        {% if ratings.1.entry.myRating%}
+            <span class="fa fa-thumbs-up like-bt like-bt-full" data-status="full" ></span>
+        {% else %}
+            <span class="fa fa-thumbs-up like-bt like-bt-empty" data-status="empty" ></span>
+        {% endif %}
+    </div>
+    <div class="rate-text">
+        <span>Favorites</span>
+        {% if favorites%}
+            <span class="fa fa-star favorites-bt favorites-bt-full" data-status="full" ></span>
+        {% else %}
+            <span class="fa fa-star favorites-bt favorites-bt-empty" data-status="empty"></span>
+        {% endif %}
+    </div>
+</div>
+<div class="col-lg-1">
+    <p>Year</p>
+    <p>{% get_value dict=data.properties key='cm:year' %}</p>
+</div>
+<div class="col-lg-5">
+    {% for key,value in data.properties.items %}
+        {% if key not in unreadable_keys %}
+            <p class="property_key"> {% format_key_txt key=key %} </p>
+            <p class="property_val">  {{value}} </p>
+        {% endif %}
+    {% endfor %}
+    <input type="hidden" value="{{link_id}}" id="preview_link_id"/>
+</div>
+<div class="col-lg-3">
+
+    <div class="form-group">
+        <input class="form-control primary" placeholder="New Tag" id="input-new-tag" type="text">
+        <button class="btn btn-default" id="btn-add-tag">Add Tag</button>
+    </div>
+    <p>Tags</p>
+    <div id="tag-box">
+        {% for tag in tags %}
+            <div class="tag">{{tag.entry.tag}}</div>
+        {% endfor %}
+    </div>
+
+</div>
+
+
